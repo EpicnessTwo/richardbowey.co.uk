@@ -2,3 +2,7 @@
 @import "@catppuccin/tailwindcss/mocha.css";
 @plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
+
+.skill-pill {
+    @apply rounded-full bg-ctp-surface0 px-3 py-1 text-sm text-ctp-text;
+}
