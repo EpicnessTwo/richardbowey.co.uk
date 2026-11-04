@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {{ with (templates.Defer (dict "key" "global")) }}
-        {{ partial "css.html" . }}
-    {{ end }}
-</head>
-<body class="bg-ctp-base">
-    {{ partial "header.html" }}
-    {{ block "main" . }}{{ end }}
-    {{ partial "footer.html" }}
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Title }} &bull; Richard Bowey's Portfolio</title>
+        <meta name="description" content="{{ .Title }} &bull; Richard Bowey's Portfolio &bull; Programmer, Gamer and Tech Enthusiast">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cd1dfd">
+        <meta name="apple-mobile-web-app-title" content="Richard Bowey's Portfolio">
+        <meta name="application-name" content="Richard Bowey's Portfolio">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:site_name" content="Richard Bowey's Portfolio">
+        {{ block "meta" . }}{{ end }}
+        <meta name="msapplication-TileColor" content="#cd1dfd">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="me" href="https://mk.catgirlsfor.science/@EpicKitty" />
+        {{ with (templates.Defer (dict "key" "global")) }}
+            {{ partial "css.html" . }}
+        {{ end }}
+    </head>
+    <body class="bg-ctp-base">
+        {{ partial "header.html" }}
+        {{ block "main" . }}{{ end }}
+        {{ partial "footer.html" }}
+    </body>
 </html>
