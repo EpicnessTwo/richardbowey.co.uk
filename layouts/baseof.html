@@ -8,6 +8,8 @@
     {{ end }}
 </head>
 <body class="bg-ctp-base">
+    {{ partial "header.html" }}
     {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" }}
 </body>
 </html>
