@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";

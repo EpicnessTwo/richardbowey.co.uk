@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@catppuccin/tailwindcss": "^1.0.0",
+    "@tailwindcss/cli": "^4.3.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.3.4"
+  }
+}
