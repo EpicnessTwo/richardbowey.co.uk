@@ -1,0 +1,1 @@
+{{ $date := time.AsTime (.Get 0) }}{{ div (sub now.Unix $date.Unix) 31557600 }}
