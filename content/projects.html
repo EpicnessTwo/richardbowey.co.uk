@@ -1,5 +1,60 @@
 ---
-title: "Projects"
+title: "My Projects"
 ---
 
-<p>This page is coming soon.</p>
+<section class="mb-16">
+    <h1 class="mt-2 text-2xl font-bold tracking-tight text-ctp-text sm:text-4xl">A few things I’ve built and worked on.</h1>
+    <p class="mt-4 max-w-3xl leading-relaxed text-ctp-subtext1">These projects include a community I’ve helped grow, tools I built to solve problems I ran into, and work in my homelab. Some are ongoing; others gave me a chance to learn something new.</p>
+</section>
+
+<div class="space-y-14">
+    <article>
+        <h2 class="text-2xl font-bold text-ctp-text">Land of Kittens Community</h2>
+        <ul class="mt-3 flex flex-wrap gap-2" aria-label="Technologies used">
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">Laravel</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">VueJS</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">TailwindCSS</li>
+        </ul>
+        <div class="mt-4 space-y-3 leading-relaxed text-ctp-subtext1">
+            <p>Land of Kittens is an online community that I’ve been running for over {{< age "2014-01-01" >}} years. We started as a small group of friends on IRC and have since grown to over 300 members spanning multiple platforms. We pride ourselves on being inclusive to people from all backgrounds, while staying small enough for everyone to feel heard. Although we don’t have a specific focus, we do enjoy gaming and sharing memes.</p>
+            <p>Over the years, we’ve had a website allowing new people to discover who we are and what we do. This started as a simple HTML page, but has expanded to a full Laravel website with a Vue front-end. This serves as a learning exercise for me to learn more about Vue and expand my skills with Laravel. It uses APIs from Discord to populate areas such as our donators and moderators, and from Google to generate the calendar.</p>
+        </div>
+        <a href="https://landofkittens.community" rel="nofollow" target="_blank" class="mt-4 inline-flex rounded-md bg-ctp-surface0 px-4 py-2 text-sm font-semibold text-ctp-text hover:bg-ctp-surface1">Visit our Website</a>
+    </article>
+
+    <article>
+        <h2 class="text-2xl font-bold text-ctp-text">StreamLurker</h2>
+        <ul class="mt-3 flex flex-wrap gap-2" aria-label="Technologies used">
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">Electron</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">NodeJS</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">HTML</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">TailwindCSS</li>
+        </ul>
+        <div class="mt-4 space-y-3 leading-relaxed text-ctp-subtext1">
+            <p>Frustrated with how unreliable notifications for Twitch streams were, I decided to create a simple Electron app that would alert me and allow me to watch my favourite streamers as soon as they went live. This was a simple project that I started in my spare time, but has since grown into a full application with multiple features.</p>
+            <p>Whilst this project is currently in a working state, I have plans to improve its stability and potentially port the software over to Golang as a way to improve my skills with the language.</p>
+        </div>
+        <a href="https://github.com/EpicnessTwo/StreamLurker" rel="nofollow" target="_blank" class="mt-4 inline-flex rounded-md bg-ctp-surface0 px-4 py-2 text-sm font-semibold text-ctp-text hover:bg-ctp-surface1">View on GitHub</a>
+    </article>
+
+    <article>
+        <h2 class="text-2xl font-bold text-ctp-text">DualPing</h2>
+        <ul class="mt-3 flex flex-wrap gap-2" aria-label="Technologies used">
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">NodeJS</li>
+            <li class="rounded-md bg-ctp-surface0 px-3 py-1 text-sm font-medium text-ctp-text">Docker</li>
+        </ul>
+        <div class="mt-4 space-y-3 leading-relaxed text-ctp-subtext1">
+            <p>I have my old ISP to thank for me creating DualPing. Due to various internet outages that would last from a few seconds to a few hours, I needed some software that would allow me to document everything automatically. Whilst this software is very specific to my own needs, it’s also helped others with the same niche issue keep track of their issues too.</p>
+            <p>It works by pinging both a local IP address such as your router and a remote IP address to determine if an outage is occurring. It can then determine if it’s an internet outage and log this to a calendar and to Discord with the start time, end time, and duration. This has been an essential tool to prove how unreliable my internet was.</p>
+        </div>
+        <a href="https://github.com/EpicnessTwo/DualPing" rel="nofollow" target="_blank" class="mt-4 inline-flex rounded-md bg-ctp-surface0 px-4 py-2 text-sm font-semibold text-ctp-text hover:bg-ctp-surface1">View on GitHub</a>
+    </article>
+
+    <article>
+        <h2 class="text-2xl font-bold text-ctp-text">My Homelab</h2>
+        <div class="mt-4 space-y-3 leading-relaxed text-ctp-subtext1">
+            <p>I’ve always been interested in running servers at home, driven by a passion for learning more about networking and server management. I began by running Ubuntu on a few spare laptops, hosting various personal projects for fun. This hobby has since evolved into managing multiple rack-mounted servers in a Proxmox cluster, which now hosts websites, bots, and critical services for myself, friends, and my community.</p>
+            <p>This experience has significantly developed my skills in virtualisation, VLANs, software security, and high availability, while also helping to reduce costs compared to using cloud services. Most of my personal projects begin life in my homelab as a testing ground and often remain in production there as well. Some of the websites hosted on my homelab regularly receive tens of thousands of hits per day - all handled with ease thanks to the performance and reliability of the systems I’ve built.</p>
+        </div>
+    </article>
+</div>
