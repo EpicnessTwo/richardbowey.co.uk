@@ -12,5 +12,19 @@
             <a href="/education-and-work" class="text-sm/6 font-semibold text-ctp-text">Education/Work</a>
             <a href="/blog" class="text-sm/6 font-semibold text-ctp-text">Blog</a>
         </div>
+        <div class="flex lg:hidden">
+            <label id="menu-toggle" for="menu-toggle-checkbox" class="cursor-pointer text-ctp-text bg-ctp-mantle hover:bg-ctp-surface0 p-2 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon">
+                    <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                </svg>
+            </label>
+            <input type="checkbox" id="menu-toggle-checkbox" class="hidden" />
+            <div class="transition-all fixed top-0 left-[-100vw] z-50 w-[80vw] h-full bg-ctp-mantle p-4 lg:hidden">
+                <a href="/" class="block py-2 text-sm font-semibold text-ctp-text">Home</a>
+                <a href="/projects" class="block py-2 text-sm font-semibold text-ctp-text">Projects</a>
+                <a href="/education-and-work" class="block py-2 text-sm font-semibold text-ctp-text">Education/Work</a>
+                <a href="/blog" class="block py-2 text-sm font-semibold text-ctp-text">Blog</a>
+            </div>
+        </div>
     </nav>
 </header>
