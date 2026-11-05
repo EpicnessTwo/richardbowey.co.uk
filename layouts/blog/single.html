@@ -1,0 +1,35 @@
+{{ define "meta" }}
+{{ $image := .Params.image | default (printf "/images/blog/thumbnails/%s.png" .File.ContentBaseName) | absURL }}
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title }} &bull; Richard Bowey's Portfolio">
+<meta property="og:description" content="{{ .Summary }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:alt" content="{{ .Title }}">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ .Title }} &bull; Richard Bowey's Portfolio">
+<meta property="twitter:description" content="{{ .Summary }}">
+<meta property="twitter:image" content="{{ $image }}">
+<meta property="twitter:label1" content="Written By">
+<meta property="twitter:data1" content="Richard Bowey">
+<meta property="twitter:label2" content="Time to read">
+<meta property="twitter:data2" content="{{ .ReadingTime }} minutes">
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ end }}
+{{ define "main" }}
+<main class="max-w-full lg:max-w-6xl mx-4 lg:mx-auto my-0 lg:my-16 text-ctp-text">
+    <article>
+        <header class="mb-10 border-b border-ctp-surface1 pb-8">
+            <h1 class="mt-2 text-2xl font-bold tracking-tight text-ctp-text sm:text-4xl">{{ .Title }}</h1>
+            <time class="mt-4 block text-sm text-ctp-subtext0" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+            {{ with .Description }}
+                <p class="mt-4 text-lg leading-relaxed text-ctp-subtext1">{{ . }}</p>
+            {{ end }}
+        </header>
+        <div class="blog-content">
+            {{ .Content }}
+        </div>
+    </article>
+</main>
+{{ end }}

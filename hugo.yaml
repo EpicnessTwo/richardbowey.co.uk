@@ -1,6 +1,10 @@
 baseURL: 'https://richardbowey.co.uk/'
 locale: 'en-gb'
 title: "Richard Bowey's Portfolio"
+markup:
+  highlight:
+    noClasses: false
+    style: catppuccin-mocha
 build:
   buildStats:
     enable: true

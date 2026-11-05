@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main class="max-w-full lg:max-w-6xl mx-4 lg:mx-auto my-0 lg:my-16 text-ctp-text">
+    {{ .Content }}
+    <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {{ $posts := where site.RegularPages "Section" "blog" }}
+        {{ range $posts.ByDate.Reverse }}
+            <article class="flex flex-col items-start">
+                {{ $thumbnail := printf "/images/blog/thumbnails/%s.png" .File.ContentBaseName }}
+                <a href="{{ .RelPermalink }}" class="relative block w-full">
+                    <img src="{{ $thumbnail }}" alt="" class="aspect-video w-full rounded-2xl bg-ctp-mantle object-cover ring-1 ring-inset ring-ctp-surface1" />
+                </a>
+                <div class="mt-6 flex items-center gap-x-4 text-xs">
+                    <time class="text-ctp-subtext0" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+                </div>
+                <div class="group relative mt-3">
+                    <h2 class="text-lg font-semibold leading-6 text-ctp-text group-hover:text-ctp-mauve">
+                        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                    </h2>
+                    {{ with .Description | default .Summary }}
+                        <p class="mt-4 line-clamp-3 text-sm leading-6 text-ctp-subtext1">{{ . }}</p>
+                    {{ end }}
+                </div>
+            </article>
+        {{ else }}
+            <p class="text-ctp-subtext1">No blog posts yet.</p>
+        {{ end }}
+    </div>
+</main>
+{{ end }}
