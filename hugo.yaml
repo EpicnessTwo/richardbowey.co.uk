@@ -20,6 +20,10 @@ outputFormats:
     mediaType: text/markdown
     isPlainText: true
     ugly: true
+  json:
+    mediaType: application/json
+    isPlainText: true
+    ugly: true
 build:
   buildStats:
     enable: true

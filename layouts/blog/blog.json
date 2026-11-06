@@ -1,0 +1,18 @@
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+{
+{{- range $index, $page := $posts.ByDate.Reverse -}}
+    {{- if $index }},{{ end -}}
+    {{- $slug := $page.File.ContentBaseName -}}
+    {{- $thumbnail := printf "/images/blog/thumbnails/%s.png" $slug | absURL -}}
+    {{- $excerpt := $page.Params.summary | default $page.Description | default $page.Summary | plainify -}}
+    {{- $post := dict
+        "url" $slug
+        "title" $page.Title
+        "excerpt" $excerpt
+        "created_at" ($page.Date.Format "2006-01-02")
+        "thumbnail" $thumbnail
+        "read_time" $page.ReadingTime
+    -}}
+    {{ $slug | jsonify }}:{{ $post | jsonify }}
+{{- end -}}
+}
