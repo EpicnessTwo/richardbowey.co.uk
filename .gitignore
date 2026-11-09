@@ -6,6 +6,7 @@
 
 # Local Hugo cache
 /.hugo_cache/
+/.cache/
 
 # Node.js tooling (Tailwind, PostCSS, etc.)
 /node_modules/
