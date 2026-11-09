@@ -1,6 +1,9 @@
 baseURL: 'https://richardbowey.co.uk/'
 locale: 'en-gb'
 title: "Richard Bowey's Portfolio"
+caches:
+  images:
+    dir: :cacheDir/images
 disableKinds:
   - taxonomy
   - term
