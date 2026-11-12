@@ -4,6 +4,19 @@
 @source "hugo_stats.json";
 @import "./chroma.css";
 
+body {
+    cursor: url("/images/cursor/normal.gif") 5 5, auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+label[for] {
+    cursor: url("/images/cursor/link.gif") 16 16, pointer;
+}
+
 #menu-toggle-checkbox:checked + div {
     @apply left-0;
 }
