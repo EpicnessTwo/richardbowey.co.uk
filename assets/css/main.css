@@ -8,6 +8,45 @@
     @apply left-0;
 }
 
+/**
+ * Terminal styles
+ */
+
+#terminal {
+    @apply relative inline-block;
+    perspective: 1000px;
+    transition: transform .2s;
+}
+
+#terminal:hover {
+    transform: scale(1.02);
+}
+
+#terminal .movement {
+    @apply w-[50%] h-[50%] z-10 absolute;
+}
+
+#terminal .top-left:hover ~ .terminal {
+    transform: rotate3d(-1, 1, 0, 5deg)
+}
+
+#terminal .top-right:hover ~ .terminal {
+    transform: rotate3d(-1, -1, 0, 5deg)
+}
+
+#terminal .bottom-left:hover ~ .terminal {
+    transform: rotate3d(1, 1, 0, 5deg)
+}
+
+#terminal .bottom-right:hover ~ .terminal {
+    transform: rotate3d(1, -1, 0, 5deg)
+}
+
+
+#terminal .terminal {
+    transition: transform .7s cubic-bezier(0,0,0,1);
+}
+
 .blog-content {
     @apply my-16 space-y-6 leading-relaxed text-ctp-subtext1;
 }
@@ -23,7 +62,7 @@
     @apply text-3xl sm:text-4xl;
 }
 
-.blog-content h2 {
+h2 {
     @apply text-2xl text-ctp-blue;
 }
 
