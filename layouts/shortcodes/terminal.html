@@ -1,0 +1,58 @@
+{{- $date := time.AsTime "1996-09-07" -}}
+{{- $current := now -}}
+{{- $years := sub $current.Year $date.Year -}}
+{{- $anniversary := $date.AddDate $years 0 0 -}}
+
+{{- if $anniversary.After $current -}}
+    {{- $years = sub $years 1 -}}
+    {{- $anniversary = $date.AddDate $years 0 0 -}}
+{{- end -}}
+
+{{- $months := 0 -}}
+{{- range seq 12 -}}
+    {{- if not (($anniversary.AddDate 0 (add $months 1) 0).After $current) -}}
+        {{- $months = add $months 1 -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $remaining := $anniversary.AddDate 0 $months 0 -}}
+{{- $days := int (div ($current.Sub $remaining).Hours 24) -}}
+
+<section id="terminal" class="w-auto max-w-full">
+    <div class="movement top-left top-0 left-0"></div>
+    <div class="movement top-right top-0 right-0"></div>
+    <div class="movement bottom-left bottom-0 left-0"></div>
+    <div class="movement bottom-right bottom-0 right-0"></div>
+    <div class="movement top-middle top-0 left-1/4"></div>
+    <div class="movement bottom-middle bottom-0 left-1/4"></div>
+    <div class="terminal font-mono leading-4 text-ctp-text text-xs bg-ctp-mantle p-4 rounded-lg shadow-xl min-w-auto md:min-w-lg hidden md:inline-block">
+        <span>$ <span class="text-ctp-green">humanfetch</span></span>
+        <div class="flex flex-row gap-8 mt-2">
+            <div>
+                <img class="[image-rendering:pixelated] size-38 md:size-48 mt-4 pointer-events-none" src="/images/terminal.png" />
+            </div>
+            <div>
+                <span class="text-ctp-red font-bold">richard</span><span class="text-ctp-yellow font-bold">@</span><span class="text-ctp-blue font-bold">richardbowey.co.uk</span><br/><br/>
+                <span class="text-ctp-pink font-bold">Human</span><br/>
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Name:</span> Richard Bowey<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Location:</span> United Kingdom<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Uptime:</span> {{ printf "%dy, %dm, %dd" $years $months $days }}<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Role:</span> Software Developer<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Experience:</span> 10+ Years<br /><br />
+                <span class="text-ctp-pink font-bold">Software</span><br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">OS:</span> Manjaro Linux<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">DE:</span> KDE Plasma<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">IDE:</span> Jetbrains Suite<br /><br />
+                <span class="bg-ctp-text inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-lavender inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-sky inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-pink inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-blue inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-yellow inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-green inline-block w-2 h-2 rounded-full"></span>
+                <span class="bg-ctp-red inline-block w-2 h-2 rounded-full"></span>
+            </div>
+        </div>
+        <span>$</span>
+    </div>
+</section>
