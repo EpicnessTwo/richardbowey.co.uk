@@ -8,16 +8,6 @@
     {{- $anniversary = $date.AddDate $years 0 0 -}}
 {{- end -}}
 
-{{- $months := 0 -}}
-{{- range seq 12 -}}
-    {{- if not (($anniversary.AddDate 0 (add $months 1) 0).After $current) -}}
-        {{- $months = add $months 1 -}}
-    {{- end -}}
-{{- end -}}
-
-{{- $remaining := $anniversary.AddDate 0 $months 0 -}}
-{{- $days := int (div ($current.Sub $remaining).Hours 24) -}}
-
 <section id="terminal" class="w-auto max-w-full">
     <div class="movement top-left top-0 left-0"></div>
     <div class="movement top-right top-0 right-0"></div>
@@ -36,7 +26,7 @@
                 <span class="text-ctp-pink font-bold">Human</span><br/>
                 &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Name:</span> Richard Bowey<br />
                 &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Location:</span> United Kingdom<br />
-                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Uptime:</span> {{ printf "%dy, %dm, %dd" $years $months $days }}<br />
+                &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Uptime:</span> {{ printf "%dy" $years }}<br />
                 &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Role:</span> Software Developer<br />
                 &nbsp;&nbsp;<span class="text-ctp-blue font-bold">Experience:</span> 10+ Years<br /><br />
                 <span class="text-ctp-pink font-bold">Software</span><br />
