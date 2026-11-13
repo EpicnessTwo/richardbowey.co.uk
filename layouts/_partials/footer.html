@@ -102,7 +102,7 @@
         </div>
         <div>
             <p class="mt-8 text-center md:text-left text-sm/6 text-ctp-subtext0 md:order-1 md:mt-0">&copy; {{ now.Year }} Richard Bowey. All rights reserved.</p>
-            <p class="mt-8 text-center md:text-left text-sm/6 text-ctp-subtext0 md:order-1 md:mt-0">
+            <p class="mt-8 text-center md:text-left text-xs text-ctp-subtext0 md:order-1 md:mt-0">
                 {{- $commitHash := getenv "HUGO_COMMIT_HASH" | default "dev" -}} Website Build: #{{ $commitHash }} <span class="px-2">&bull;</span> {{- $buildDate := getenv "HUGO_BUILD_DATE" | default "dev" -}} Build Date: {{ $buildDate }}
             </p>
         </div>
