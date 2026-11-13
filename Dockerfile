@@ -2,6 +2,7 @@ FROM node:24.22.1-bookworm-slim AS build
 
 ARG HUGO_VERSION=0.167.0
 ARG TARGETARCH
+ARG HUGO_COMMIT_HASH=unknown
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl \
@@ -17,7 +18,9 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-RUN hugo --minify
+RUN HUGO_COMMIT_HASH="$HUGO_COMMIT_HASH" \
+    HUGO_BUILD_DATE="${HUGO_BUILD_DATE:-$(date -u +%Y-%m-%d)}" \
+    hugo --minify
 
 FROM nginx:alpine
 
