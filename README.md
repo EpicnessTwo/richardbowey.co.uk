@@ -31,3 +31,12 @@ The generated site is written to `public/`.
 - Static images and files: `static/`
 
 Each blog post is also published as Markdown at `/blog/<slug>.md`. The blog listings are available as JSON at `/blog.json`.
+
+## Docker
+
+Build the static site into an image that listens on port 80:
+
+```sh
+docker build -t richardbowey-portfolio .
+docker run --rm -p 8080:80 richardbowey-portfolio
+```

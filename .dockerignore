@@ -1,0 +1,9 @@
+.git
+.github
+.cache
+.hugo_cache
+node_modules
+public
+resources/_gen
+.hugo_build.lock
+*.log
